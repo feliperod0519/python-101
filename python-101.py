@@ -334,6 +334,182 @@ def main():
     bubbleSort_2(names)
     print(names)
     
+    def my_sqr(n):
+        return n**2
+
+    def splicer(myString):
+        if len(myString)%2==0:
+            return 'EVEN'
+        else:
+            return myString[0]
+    
+    def check_Even(n):
+        return n%2==0
+
+    print(my_sqr(4))
+    nums = list(range(1,7))
+    print(nums)
+    print(splicer("HOLAHello"))
+
+    more_nums = list(map(my_sqr,nums))
+    print(more_nums)
+
+    splicer = list(map(splicer,names))
+    print(splicer)
+
+    f = list(filter(check_Even,nums))
+    print(f)
+
+    fLambda = list(map(lambda n:n**2,nums))
+    print(fLambda)
+
+    filterLambda = list(filter(lambda i:i%2==0,nums)) # list(map(lambda i:i%2==0,nums))
+    print(filterLambda)
+
+    mapLambda = list(map(lambda x:x[0],names))
+    print(mapLambda)
+
+    mapLambda = list(map(lambda x:x[-1::-1],names))
+    print(mapLambda)
+
+    def doWhatEver():
+        name = "Juan Andres"
+        def hello(n):
+            print(f"Hello {n}")
+            print(f"{name}")
+        hello(name)
+    
+    doWhatEver()
+
+    #OO
+    class Sample():
+        pass
+
+    my_sample = Sample()
+    print(type(my_sample))
+    print(isinstance(my_sample,Sample))
+    print(isinstance(my_sample,type("")))
+
+
+    class Cat():
+        tipo = 'mamifero'
+        def __init__(self,color):
+            self.color = color
+    
+    manchitas = Cat(color='amarillo')
+    print(type(manchitas))
+    print(manchitas.color)
+
+    class Gato():
+        tipo = 'mamifero'
+        def __init__(self,color,nombre,manchas):
+            self.color=color
+            self.nombre=nombre
+            self.manchas=manchas
+
+        def Maullar(self):
+            print('Miau!')
+    
+    minou = Gato(color='amarillo',nombre='minou',manchas=True)
+    print(type(minou))
+    print(f"{minou.color} {minou.nombre} {minou.manchas} {minou.tipo}")
+    minou.Maullar()
+
+    class Circle():
+        pi=3.14
+        def __init__(self,r=1):
+            self.r = r
+        def circunferencia(self):
+            return self.pi * self.r**2
+        
+    jaCircle = Circle(3)
+    print(jaCircle.circunferencia())
+    print(Circle.pi)
+
+    class Animal():
+        def __init__(self):
+            print("Animal created!")
+        def whoAmI(self):
+            print("I'm an animal")
+        def eat(self):
+            print("I'm eating")
+        def noise(self):
+            raise NotImplementedError("Not yet implemented")
+    
+    class Dog(Animal):
+        def __init__(self):
+            Animal.__init__(self) # super().__init__(self)
+            print("Dog created")
+        def whoAmI(self):
+            print("I am a dog")
+        def Ladrar(self):
+            print("Woof")
+    
+    chester = Dog()
+    chester.eat()
+    chester.whoAmI()
+    chester.Ladrar()
+
+    x= [10,9,3,3,1,4,3,10]
+    y = list(x)
+    bubbleSort_2(x)
+    print(x)
+    print(y)
+
+
+    print([5,2,3,4,5] == [2,3,4,5,5])
+
+    print(sum([5,2,3,4,5])/len([5,2,3,4,5]))
+
+    def compList(x,y):
+        if (len(x)!=len(y)):
+            return False
+        for i in range(0,len(x)):
+            if x[i]!=y[i]:
+                return False
+        return True
+
+    print(compList([10,9,3,3,1,4,3,10],[1,3,3,3,4,9,10,10]))
+
+    notas = [2.5,4.3,2.7,3.9,2.9,3.2,5.0,4.6,3.8]
+
+    def Reprobacion(x):
+        if x<3.0:
+            return True
+        return False
+
+    def ayuda(x):
+        if x<4.5:
+            return x+0.25
+        else:
+            return 5.0
+    
+    notas_ayuda = []
+    notas_repro = []
+    for i in notas:
+        notas_ayuda.append(ayuda(i))
+    for i in notas:
+        if Reprobacion(i):
+            notas_repro.append(i)
+    print(notas_ayuda)
+    print(notas_repro)
+
+    notas_2 = list(range(0,99))
+    print(notas_2)
+
+    notas_ayuda = list(map(ayuda,notas))
+    print(notas_ayuda)
+    
+    #SIGNATURE 
+    notas_ayuda = list(map(lambda x: x+0.25,notas))
+    notas_repro = list(filter(lambda x: x<3,notas))
+
+    notas_ayuda2 = list(map(lambda x: x+0.25 if x<4.5 else 5.0,notas))
+
+    print(len(list(filter(lambda x: x<3,notas))))
+    print(notas_ayuda2)
+
+    #lambda x : True if (x > 10 and x < 20) else False
 
 if __name__ == '__main__':
     main()
@@ -349,6 +525,13 @@ if __name__ == '__main__':
 #list comprehesion
 
 
+#lambda, map, filter
+#OOP
+#pip
+#packages
+#main
+#error handling
+#math
 
 
-
+#lambda, map, filter
